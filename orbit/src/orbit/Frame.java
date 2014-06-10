@@ -8,7 +8,7 @@ import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
-import orbit.Simulation;
+import orbit.*;
 
 @SuppressWarnings("unused")
 public class Frame extends JFrame {
@@ -42,6 +42,9 @@ public class Frame extends JFrame {
 		
 		addKeyListener(simu);
 		addMouseListener(simu);
+		
+		Particle p1 = new Particle(250, 250, 15, EntityObjectID.Particle);
+		simu.addObject(p1);
 	}
 
 	public void update(float tslf) {		

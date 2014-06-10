@@ -21,7 +21,7 @@ public abstract class Entity {
 	protected float speedX = 0;
 	protected float speedY = 0;
 
-	public Entity(float posX, float posY, float speedX, float speedY, float accel, float mass, float radius) {
+	public Entity(float posX, float posY, float speedX, float speedY, float accel, float mass, float radius, EntityObjectID id) {
 		this.posX = posX;
 		this.posY = posY;
 		this.speedX = speedX;
@@ -29,34 +29,39 @@ public abstract class Entity {
 		this.accel = accel;
 		this.mass = mass;
 		this.radius = radius;
+		this.id = id;
 	}
 	
-	public Entity(float posX, float posY, float speedX, float speedY, float mass, float radius) {
+	public Entity(float posX, float posY, float speedX, float speedY, float mass, float radius, EntityObjectID id) {
 		this.posX = posX;
 		this.posY = posY;
 		this.speedX = speedX;
 		this.speedY = speedY;
 		this.mass = mass;
 		this.radius = radius;
+		this.id = id;
 	}
 	
-	public Entity(float posX, float posY, float speedX, float speedY, float mass) {
+	public Entity(float posX, float posY, float speedX, float speedY, float mass, EntityObjectID id) {
 		this.posX = posX;
 		this.posY = posY;
 		this.speedX = speedX;
 		this.speedY = speedY;
 		this.mass = mass;
+		this.id = id;
 	}
 	
-	public Entity(float posX, float posY, float mass) {
+	public Entity(float posX, float posY, float mass, EntityObjectID id) {
 		this.posX = posX;
 		this.posY = posY;
 		this.mass = mass;
+		this.id = id;
 	}
 	
-	public Entity(float posX, float posY) {
+	public Entity(float posX, float posY, EntityObjectID id) {
 		this.posX = posX;
 		this.posY = posY;
+		this.id = id;
 	}
 	
 	public abstract void update(LinkedList<Entity> object, float tslf);
