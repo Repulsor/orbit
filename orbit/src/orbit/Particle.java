@@ -17,7 +17,6 @@ public class Particle extends Entity {
 
 	@Override
 	public void update(LinkedList<Entity> object, float tslf) {
-		this.addGravity(tslf);
 		this.addBounds();
 	}
 
