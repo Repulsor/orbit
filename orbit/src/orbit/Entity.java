@@ -71,7 +71,7 @@ public abstract class Entity {
 	 * Simple Gravity
 	 */
 	public void addGravity(float t) {
-		posY += speedY * accel * t;
+		posY += speedY * accel;
 	}
 	
 	public void addBounds() {
