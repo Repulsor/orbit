@@ -67,13 +67,6 @@ public abstract class Entity {
 		this.id = id;
 	}
 	
-	/*
-	 * Simple Gravity
-	 */
-	public void addGravity(float t) {
-		posY += speedY * accel;
-	}
-	
 	public void addBounds() {
         if (posX - radius < 0) {
         	posX = radius;
