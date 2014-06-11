@@ -9,13 +9,16 @@ public class Particle extends Entity {
 
 	public Particle(float posX, float posY, float mass, EntityObjectID id) {
 		super(posX, posY, mass, id);
-		// TODO Auto-generated constructor stub
+		this.speedX = 0;
+		this.speedY = 5;
+		this.accel = 50;
+		this.radius = 20;
 	}
 
 	@Override
 	public void update(LinkedList<Entity> object, float tslf) {
-		// TODO Auto-generated method stub
-		
+		this.addGravity(tslf);
+		this.addBounds();
 	}
 
 	@Override

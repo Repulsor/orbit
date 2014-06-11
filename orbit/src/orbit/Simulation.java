@@ -9,7 +9,6 @@ import java.util.LinkedList;
 
 import orbit.Entity;
 
-@SuppressWarnings("unused")
 public class Simulation implements KeyListener, MouseListener {
 	
 	public LinkedList<Entity> object = new LinkedList<Entity>();

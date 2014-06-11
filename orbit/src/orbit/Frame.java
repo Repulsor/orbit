@@ -8,9 +8,6 @@ import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
-import orbit.*;
-
-@SuppressWarnings("unused")
 public class Frame extends JFrame {
 
 	/**
@@ -22,7 +19,7 @@ public class Frame extends JFrame {
 	private Random rand;
 	private Simulation simu;
 	private float tslu;
-	private float PAUSETIME = 0.001f;
+	private float PAUSETIME = 0.01f;
 	
 	public Frame(String title) {
 		setTitle(title);		
@@ -54,13 +51,6 @@ public class Frame extends JFrame {
 			tslu = 0;
 		}
 	}
-
-	public void repaint() {
-		Graphics g = bs.getDrawGraphics();
-		draw(g);
-		g.dispose();
-		bs.show();
-	}
 	
 	private void createBackground(Graphics g) {
 		g.setColor(Color.BLACK);
@@ -70,5 +60,12 @@ public class Frame extends JFrame {
 	public void draw(Graphics g) {
 		createBackground(g);
 		simu.draw(g);
+	}
+
+	public void repaint() {
+		Graphics g = bs.getDrawGraphics();
+		draw(g);
+		g.dispose();
+		bs.show();
 	}
 }
