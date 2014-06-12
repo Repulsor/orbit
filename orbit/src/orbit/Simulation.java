@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.LinkedList;
 
-import orbit.Entity;
+import orbit.object.Entity;
 
 public class Simulation implements KeyListener, MouseListener {
 	
@@ -16,7 +16,6 @@ public class Simulation implements KeyListener, MouseListener {
 	private Entity tempObject;
 	
 	private boolean go = true;
-	private int num = 0;
 	
 	public static boolean[] keys = new boolean[1024];
 	
@@ -26,19 +25,17 @@ public class Simulation implements KeyListener, MouseListener {
 	
 	public void addObject(Entity e) {
 		this.object.add(e);
-		num++;
 	}
 	
 	public void removeObject(Entity e) {
 		this.object.remove(e);
-		num--;
 	}
 	
-	public void update(float tslf) {
+	public void update(float delta) {
 		if(go) {
 			for(int i = 0; i < object.size(); i++) {
 				tempObject = object.get(i);
-				tempObject.update(object, tslf);
+				tempObject.update(object, delta);
 				
 			}
 		}

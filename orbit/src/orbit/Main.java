@@ -18,22 +18,26 @@ public class Main {
 		
 		f.init();
 		
-		long lastFrame = System.currentTimeMillis();
+		f.requestFocus();
+		
+		long lastFrameTime = System.currentTimeMillis();
+		int targetFrameRate = 60;
+		float tslf;
 		
 		while(true) {
-			long currentFrame = System.currentTimeMillis();
-			float tslf = (float) ((currentFrame - lastFrame)/1000.0);
-			lastFrame = currentFrame;
+			
+			long currentFrameTime = System.currentTimeMillis();
+			tslf = (float) ((currentFrameTime - lastFrameTime)/1000.0);
+			lastFrameTime = currentFrameTime;
 			
 			f.update(tslf);
 			f.repaint();
 			
 			try {
-				Thread.sleep(10);
+				Thread.sleep(1000/targetFrameRate);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 	}
-
 }
