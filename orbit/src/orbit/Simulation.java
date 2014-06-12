@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.LinkedList;
 
-import orbit.object.Entity;
+import orbit.model.Entity;
 
 public class Simulation implements KeyListener, MouseListener {
 	

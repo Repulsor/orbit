@@ -7,8 +7,8 @@ import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
-import orbit.data.Particle;
-import orbit.object.EntityObjectID;
+import orbit.model.EntityObjectID;
+import orbit.object.Particle;
 
 public class Frame extends JFrame {
 
@@ -41,7 +41,7 @@ public class Frame extends JFrame {
 		addKeyListener(simu);
 		addMouseListener(simu);
 		
-		Particle p1 = new Particle(250, 250, EntityObjectID.Particle);
+		Particle p1 = new Particle(180, 280, EntityObjectID.Particle);
 		Particle p2 = new Particle(350, 250, EntityObjectID.Particle);
 		simu.addObject(p2);
 		simu.addObject(p1);

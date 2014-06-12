@@ -1,11 +1,9 @@
-package orbit.object;
+package orbit.model;
 
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.LinkedList;
-
-import orbit.object.EntityObjectID;
 
 
 public abstract class Entity {
@@ -30,7 +28,7 @@ public abstract class Entity {
 
 	protected double radius = 1;
 	
-	protected double acceleration = 0;
+	protected double acceleration = 1;
 	
 	protected double energy = 0;
 	protected double energyLoss = 0.65f;
