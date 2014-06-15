@@ -6,18 +6,21 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.LinkedList;
 
+import orbit.Physics;
 import orbit.properties.Position;
 import orbit.properties.Velocity;
 
 
-public abstract class Entity {
+public abstract class Entity extends Physics {
 	
 	protected EntityObjectID id;
 	protected Color color;
 	
 	protected Position position;
 	protected Velocity velocity;
-	protected double radius = 1;
+	
+	protected double w = 0;
+	protected double h = 0;
 	
 	
 	public Entity(double x, double y, double z, double vx, double vy, double vz, EntityObjectID id) {
@@ -66,7 +69,7 @@ public abstract class Entity {
 	}
 
 	public void setPosY(double posY) {
-		position.setX(posY);
+		position.setY(posY);
 	}
 	
 	public void setSpeedX(double speedX) {
@@ -77,11 +80,19 @@ public abstract class Entity {
 		velocity.setSpeedY(speedY);
 	}
 	
-	public double getRadius() {
-		return radius;
+	public double getRadiusX() {
+		return w;
+	}
+	
+	public double getRadiusY() {
+		return h;
 	}
 
-	public void setRadius(double radius) {
-		this.radius = radius;
+	public void setRadiusX(double radius) {
+		this.w = radius;
+	}
+	
+	public void setRadiusY(double radius) {
+		this.h = radius;
 	}
 }

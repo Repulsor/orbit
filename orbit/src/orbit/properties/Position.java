@@ -16,7 +16,7 @@ public class Position {
 	
 	
 	public Position(double x, double y) {
-		this(x, y, 0.0);
+		this(x, y, 0);
 	}
 	
 	

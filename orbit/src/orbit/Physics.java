@@ -1,5 +1,7 @@
 package orbit;
 
+import orbit.properties.Position;
+
 
 public abstract class Physics {
 	/*
@@ -28,4 +30,15 @@ public abstract class Physics {
 	
 	//standard gravitation - earth gravity
 	public final static double g =  9.80665;
+	
+	public double distance(Position p1, Position p2) {
+		return Math.sqrt(
+				(p1.getX() - p2.getX()) *  (p1.getX() - p2.getX()) + 
+				(p1.getY() - p2.getY()) *  (p1.getY() - p2.getY())
+				);
+	}
+	
+	public Position midpoint(Position p1, Position p2) {
+	    return new Position((p1.getX() + p2.getX()) / 2, (p1.getY() + p2.getY()) / 2);
+	}
 }

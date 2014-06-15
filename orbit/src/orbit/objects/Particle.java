@@ -17,8 +17,9 @@ public class Particle extends Entity {
 	private Random rand;
 	
 	public Particle(double x, double y, double vx, double vy, EntityObjectID id) {
-		super(x, y, vx, vy, id);
-		this.radius = 20;
+		super(x, y, vx, 20, id);
+		this.w = 20;
+		this.h = 20;
 		rand = new Random();
 		randomColor();
 	}
@@ -32,17 +33,17 @@ public class Particle extends Entity {
 
 	@Override
 	public void update(LinkedList<Entity> object, float delta) {
-		
+		setPosY(getPosY() + getSpeedY());
 	}
 
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(color);
-		g.fillOval((int)getPosX(), (int)getPosY(), (int)radius, (int)radius);
+		g.fillOval((int)getPosX(), (int)getPosY(), (int)w, (int)h);
 	}
 
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle((int)getPosX(), (int)getPosY(), (int)radius, (int)radius);
+		return new Rectangle((int)getPosX(), (int)getPosY(), (int)w, (int)h);
 	}
 }
