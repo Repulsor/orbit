@@ -1,4 +1,4 @@
-package orbit.model;
+package orbit.properties;
 
 
 public class Position {

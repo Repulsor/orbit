@@ -3,12 +3,13 @@ package orbit;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 import orbit.model.EntityObjectID;
-import orbit.object.Particle;
+import orbit.objects.Particle;
 
 public class Frame extends JFrame {
 
@@ -36,13 +37,19 @@ public class Frame extends JFrame {
 		createBufferStrategy(3);
 		bs = getBufferStrategy();
 		
+		Random random = new Random();
 		simu = new Simulation();
 		
 		addKeyListener(simu);
 		addMouseListener(simu);
+
+		Particle p1 = new Particle(random.nextInt(Main.width -100), random.nextInt(Main.height - 100), random.nextInt(20), random.nextInt(20), EntityObjectID.Particle);
+		Particle p2 = new Particle(350, 250, 0, 0, EntityObjectID.Particle);
+		Particle p3 = new Particle(50, 85, 0, 0, EntityObjectID.Particle);
+		Particle p4 = new Particle(100, 145, 0, 0, EntityObjectID.Particle);
 		
-		Particle p1 = new Particle(180, 280, EntityObjectID.Particle);
-		Particle p2 = new Particle(350, 250, EntityObjectID.Particle);
+		simu.addObject(p4);
+		simu.addObject(p3);
 		simu.addObject(p2);
 		simu.addObject(p1);
 	}

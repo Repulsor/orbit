@@ -1,7 +1,7 @@
-package orbit.physic;
+package orbit;
 
 
-public abstract class PhysicEngine {
+public abstract class Physics {
 	/*
 	 * ELECTROMAGNETISM
 	 */
